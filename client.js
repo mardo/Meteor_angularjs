@@ -1,4 +1,4 @@
-angular.module("meteor", []).service("MeteorCollections", [
+angular.module("meteor", ['ngRoute']).service("MeteorCollections", [
 function() {
 	var self = this;
 	self.collections = {};
@@ -103,6 +103,8 @@ function($rootScope, MeteorCollections, $meteorObject) {
 		Collection.remove = function(selector) {
 			return collection.remove(selector);
 		}
+		Collection.collection = collection;
+		
 		return Collection;
 	}
 
